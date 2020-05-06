@@ -4,6 +4,29 @@
 
 配置好代理之后，即可使用本工具定时拨号并发送至 Redis。
 
+```
+yum install squid -y
+vi /etc/squid/squid.conf
+# 加在http_access deny all之前
+auth_param basic program /usr/lib64/squid/basic_ncsa_auth /etc/squid/passwords
+acl auth_user proxy_auth REQUIRED
+http_access allow auth_user
+# 尾部高匿参数
+request_header_access Via deny all
+request_header_access X-Forwarded-For deny all
+request_header_access From deny all
+
+yum install httpd -tools -y
+htpasswd - cd /etc/squid/passwords username
+
+systemctl enable squid
+systemctl start squid
+
+squid -k reconfigure //重新加载配置文件
+squid -k parse //验证配置
+squid -s //启动
+```
+
 ### 安装 ADSLProxy
 
 ```
