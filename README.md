@@ -3,6 +3,9 @@
 ### 基础设置
 
 ```
+# 拨号
+> adsl-start
+
 ssh配置
 
 yum -y install screen
@@ -10,7 +13,7 @@ yum -y install screen
 Miniconda3
 ```
 
-
+### 安装squid
 首先配置好代理，如使用 Squid，运行在 3128 端口，并设置好用户名和密码。
 
 配置好代理之后，即可使用本工具定时拨号并发送至 Redis。
@@ -62,6 +65,7 @@ export PROXY_PASSWORD=
 ### 执行
 
 ```
+adsl-stop
 adslproxy send
 ```
 
