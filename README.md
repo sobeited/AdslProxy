@@ -16,7 +16,7 @@ request_header_access Via deny all
 request_header_access X-Forwarded-For deny all
 request_header_access From deny all
 
-yum install httpd -tools -y
+yum install httpd-tools -y
 htpasswd - cd /etc/squid/passwords username
 
 systemctl enable squid
