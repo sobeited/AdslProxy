@@ -6,6 +6,7 @@
 
 ```
 yum install squid -y
+yum install openssl -y
 vi /etc/squid/squid.conf
 # 加在http_access deny all之前
 auth_param basic program /usr/lib64/squid/basic_ncsa_auth /etc/squid/passwords
