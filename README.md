@@ -55,33 +55,6 @@ adslproxy send
 
 运行结果：
 
-
-```
-pip3 install -U adslproxy
-```
-
-### 设置环境变量
-
-```
-# Redis 数据库地址和密码
-export REDIS_HOST=
-export REDIS_PASSWORD=
-# 本机配置的代理端口
-export PROXY_PORT=
-# 本机配置的代理用户名，无认证则留空
-export PROXY_USERNAME=
-# 本机配置的代理密码，无认证则留空
-export PROXY_PASSWORD=
-```
-
-### 执行
-
-```
-adslproxy send
-```
-
-运行结果：
-
 ```
 2020-04-13 01:39:30.811 | INFO     | adslproxy.sender.sender:loop:90 - Starting dial...
 2020-04-13 01:39:30.812 | INFO     | adslproxy.sender.sender:run:99 - Dial Started, Remove Proxy
