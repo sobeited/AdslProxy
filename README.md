@@ -51,10 +51,14 @@ pip3 install -U adslproxy
 ### 设置环境变量
 
 ```
+### 远端：redis + adslproxy模块
+### /etc/redis.conf ->  requirepass 设置的密码
 # Redis 数据库地址和密码
 export REDIS_HOST=
 export REDIS_PASSWORD=
-# 本机配置的代理端口
+
+### adsl拨号主机：squid + adslproxy模块
+# 本机配置的代理端口，指的squid的端口
 export PROXY_PORT=
 # 本机配置的代理用户名，无认证则留空
 export PROXY_USERNAME=
