@@ -65,6 +65,8 @@ export PROXY_PASSWORD=
 ### 执行
 
 ```
+# 进入screen
+screen
 adsl-stop
 adslproxy send
 ```
