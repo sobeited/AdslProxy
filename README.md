@@ -3,7 +3,7 @@
 ### 基础设置
 
 ```
-# 拨号
+# 拨号主机，拨号上网
 > adsl-start
 
 ssh配置
@@ -31,6 +31,7 @@ request_header_access Via deny all
 request_header_access X-Forwarded-For deny all
 request_header_access From deny all
 
+# 创建squid用户，并设置密码
 yum install httpd-tools -y
 htpasswd -c /etc/squid/passwords username
 
@@ -52,7 +53,7 @@ pip3 install -U adslproxy
 
 ```
 ### 远端：redis + adslproxy模块
-### /etc/redis.conf ->  requirepass 设置的密码
+### /etc/redis.conf ->  requirepass 所设置的密码
 # Redis 数据库地址和密码
 export REDIS_HOST=
 export REDIS_PASSWORD=
@@ -100,3 +101,9 @@ adslproxy send
 
 此时有效代理就会发送到 Redis。
 
+# 查看拨号成功的ip:port（参见settings.py）
+```
+# 服务器端口
+SERVER_PORT = env.int('SERVER_PORT', 8425)
+SERVER_HOST = env.str('SERVER_HOST', '0.0.0.0')
+```
